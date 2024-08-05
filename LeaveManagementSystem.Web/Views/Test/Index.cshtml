@@ -1,0 +1,24 @@
+﻿@model TestViewModel
+@{
+    ViewData["Title"] = "Test Page";
+}
+
+<h1 class="display-4">Test Page</h1>
+<div class="text-center">
+    <p>Test Page... how to get the name prop of the TestViewModel: </p>
+    @{
+        if (!string.IsNullOrEmpty(Model.Name))
+        {
+            <p>
+                <strong>Name:</strong> <code>@Model.Name</code>
+            </p>
+        }
+        else
+        {
+            <p>
+                <strong>No Name founded</strong>
+            </p>
+        }
+    }
+
+</div>
