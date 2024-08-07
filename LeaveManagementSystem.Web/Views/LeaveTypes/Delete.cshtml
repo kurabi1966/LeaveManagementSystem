@@ -1,0 +1,32 @@
+@model LeaveManagementSystem.Web.LeaveType
+
+@{
+    ViewData["Title"] = "Delete Leave Type";
+}
+
+<h3>@ViewData["Title"] "<i>@Model.Name</i>"</h3>
+
+<h5>Are you sure you want to delete "<i>@Model.Name</i>"?</h5>
+<div>
+    <hr />
+    <dl class="row" style="vertical-align: middle;">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10 mt-2">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2 mt-2">
+            @Html.DisplayNameFor(model => model.NumberOfDays)
+        </dt>
+        <dd class="col-sm-10 mt-2">
+            @Html.DisplayFor(model => model.NumberOfDays)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="mt-3">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-outline-danger" />&nbsp;
+        <a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-arrow-left-circle-fill"></i> Cancel</a>
+    </form>
+</div>
