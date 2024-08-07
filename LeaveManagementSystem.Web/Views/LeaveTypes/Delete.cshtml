@@ -1,4 +1,4 @@
-@model LeaveManagementSystem.Web.LeaveType
+@model LeaveTypeReadOnlyVM
 
 @{
     ViewData["Title"] = "Delete Leave Type";
@@ -23,7 +23,7 @@
             @Html.DisplayFor(model => model.NumberOfDays)
         </dd>
     </dl>
-
+    <hr />
     <form asp-action="Delete" class="mt-3">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-outline-danger" />&nbsp;

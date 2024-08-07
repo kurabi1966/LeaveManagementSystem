@@ -1,4 +1,4 @@
-@model LeaveManagementSystem.Web.LeaveType
+@model LeaveTypeReadOnlyVM
 
 @{
     ViewData["Title"] = "Leave Type Details";
@@ -22,6 +22,7 @@
         </dd>
     </dl>
 </div>
+<hr />
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-primary">Edit</a>&nbsp;
     <a asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-arrow-left-circle-fill"></i> Back to
