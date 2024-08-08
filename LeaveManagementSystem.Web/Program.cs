@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using LeaveManagementSystem.Web.Data;
 using System.Reflection;
+using LeaveManagementSystem.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+// Added for DI. Makes LeaveTypeService available for dependency injection
+builder.Services.AddScoped<ILeaveTypeService, LeaveTypeService>();
 
 var app = builder.Build();
 
